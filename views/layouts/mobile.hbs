@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta property="qc:admins" content="24517261765210166375" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/public/lib/css/mobile/reset.css">
+    {{{_sections.css-file}}}
+</head>
+<body>
+{{{body}}}
+</body>
+<script src="/public/lib/js/mobile/zepto.js" type="text/javascript"></script>
+<script src="/public/lib/js/weblog.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?761c209e26d028b163c3919fa96c4b3c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    //设置最小高度为客户端高度，防止内容不够时出现底白
+    $('.wrapper').css('min-height', $(window).height());
+</script>
+<script>
+    (function(){
+        var ua = navigator.userAgent; var isAndroid = /Android/i.test(ua);
+        var DESIGN_WIDTH = 750;
+        var DESIGN_dpr = 2;
+        var DESIGN_ROOT_FONT_SIZE = 100;
+        var dpr = window.devicePixelRatio;
+        var dpiWidth = screen.width;
+        if (isAndroid) { dpr = 1; }
+        var realScale = 1 / dpr;
+        document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=' + realScale + ', maximum-scale=' + realScale + ', minimum-scale=' + realScale + '" />') ;
+        var docWidth = document.documentElement.getBoundingClientRect().width;
+        if (isAndroid) { dpiWidth = docWidth; }
+        var realFontSize = dpiWidth * dpr / DESIGN_WIDTH * DESIGN_ROOT_FONT_SIZE;
+        document.getElementsByTagName("html")[0].style.fontSize = realFontSize + "px";
+    })();
+</script>
+{{{_sections.js-file}}}
